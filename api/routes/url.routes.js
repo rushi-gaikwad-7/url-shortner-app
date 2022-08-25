@@ -16,7 +16,7 @@ urlRouter.post('/shortLink',(req,res)=>{
      
         Linkbase.set(CustomLink,link,"EX",600);
          
-        res.status(201).send({massage:"UrlShorted",newUrl:`http://localhost:8080/${CustomLink}`});
+        res.status(201).send({massage:"UrlShorted",newUrl:`https://urlshortner-heroku-server.herokuapp.com/${CustomLink}`});
     }
     else{
 
@@ -24,7 +24,7 @@ urlRouter.post('/shortLink',(req,res)=>{
         
         Linkbase.set(custom,link);
          
-        res.status(201).send({massage:"UrlShorted",newUrl:`http://localhost:8080/${custom}`});
+        res.status(201).send({massage:"UrlShorted",newUrl:`https://urlshortner-heroku-server.herokuapp.com/${custom}`});
     }
 
 })
@@ -45,8 +45,6 @@ urlRouter.post('/shortLink',(req,res)=>{
            }
         }
       });
-
-
 })
 
 

@@ -13,7 +13,10 @@ app.use(urlencoded({extended:true}));
 
 app.use('/',urlRouter)
 
+const PORT = process.env.PORT || 8080;
 
-app.listen(8080,()=>{
-    console.log("port 8080 is open")
-})
+app.listen(PORT, () => {
+    
+   
+    console.log(`Server connected at http://localhost:${PORT}`);
+});
