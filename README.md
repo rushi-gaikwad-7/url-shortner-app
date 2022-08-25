@@ -9,10 +9,8 @@ Personal small-url-shortner-app project build using React.js, CSS ,JAVASCRIPT,Re
 
 In the project directory, you can run:
 
-run index.html with live server
+npm start
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
 
 ## Tech Stack 💻
 - React.js 
