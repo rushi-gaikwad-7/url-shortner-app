@@ -11,7 +11,7 @@ export const Homepage = () => {
   
 
   const handleClick = async () => {
-    const res = await axios.post("http://localhost:8080/shortLink", {
+    const res = await axios.post("https://urlshortner-heroku-server.herokuapp.com/shortLink", {
       link,
       CustomLink,
     });
