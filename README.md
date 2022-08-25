@@ -29,6 +29,12 @@ You will also see any lint errors in the console.
 ## Responsibilities 💪
 - complete project built by me
 
+## Snap Shots 📷
+
+
+![Logo](https://i.ibb.co/TWqW2xB/urlshortner-one.png)
+
+
 
 ## Contributors  😇
 
