@@ -1,51 +1,20 @@
 
+
+
 const {Router} = require("express");
-const {randomBytes}=require("node:crypto")
-const Linkbase = require("../database/db");
+
+const urlController = require("../controller/url.controller");
 
 
 const urlRouter=Router();
 
 urlRouter.get('/',(req,res)=>{
-    res.send('welcome')
+    res.send('welcome to url shortener server')
 })
 
-urlRouter.post('/shortLink',(req,res)=>{
-    const {link,CustomLink}=req.body;
-    if(CustomLink){
-     
-        Linkbase.set(CustomLink,link,"EX",600);
-         
-        res.status(201).send({massage:"UrlShorted",newUrl:`https://urlshortner-heroku-server.herokuapp.com/${CustomLink}`});
-    }
-    else{
+urlRouter.post('/shortLink',urlController.short)
 
-        let custom= randomBytes(5).toString('hex');
-        
-        Linkbase.set(custom,link);
-         
-        res.status(201).send({massage:"UrlShorted",newUrl:`https://urlshortner-heroku-server.herokuapp.com/${custom}`});
-    }
-
-})
-
-  urlRouter.get('/:url',async(req,res)=>{
-
-    const {url}=req.params;
-   
-    Linkbase.get(url, (err, result) => {
-        if (err) {
-        res.status(403).send({massage:"error occurred"})
-        } else {
-           if(result){
-            res.status(301).redirect(result)
-           }
-           else{
-            res.status(404).send('<h1>Site not fount !</h1>')
-           }
-        }
-      });
-})
+  urlRouter.get('/:url',urlController.redirect)
 
 
 module.exports=urlRouter;
