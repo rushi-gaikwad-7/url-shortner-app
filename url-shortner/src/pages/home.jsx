@@ -1,4 +1,4 @@
-import styles from "../styles/main.module.css";
+import styles from "../css/index.module.css";
 import axios from "axios";
 import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
